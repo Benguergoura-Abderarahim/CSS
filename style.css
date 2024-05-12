@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Reddit Sans;
+}
+
+.logo-theme {
+  padding: 2%;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+}
+
+.logo-theme ul,
+.logo-theme li {
+  display: inline-flex;
+  padding: 2%;
+  margin-left: 1%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 35%;
+  color: white;
+}
+
+.logo-theme ul {
+  align-content: baseline;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: xx-large;
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+.labels {
+  position: absolute;
+  display: flexbox;
+  text-align: center;
+  letter-spacing: 8px;
+  margin-top: -1.5%;
+  margin-left: 4.5%;
+  font-size: 12px;
+}
+
+.theme-container {
+  border: rgb(6, 6, 78) 1px solid;
+  border-radius: 30px;
+  padding: 2%;
+  margin-left: 1%;
+  align-items: center;
+  background-color: #242641;
+  width: 75px;
+}
+
+/* Hide theme 2 and theme 3 radio buttons */
+input[type="radio"][name="theme2"],
+input[type="radio"][name="theme3"] {
+  visibility: hidden;
+}
+
+input[type="radio"][name="theme1"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  padding: 0;
+  margin-top: 8%;
+  margin-right: 25%;
+  cursor: pointer;
+  background-color: rgb(250, 62, 62);
+}
+
+.calculator-screen {
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #131638;
+  color: white;
+  padding: 2%;
+  margin-left: 40%;
+  margin-bottom: 3%;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  text-align: right;
+  font-size: 40px;
+}
+
+.grid-container {
+  border-radius: 10px;
+  width: 20%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: #242641;
+  padding: 2%;
+  margin-left: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5%;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+*.grid-item:not(.grid-item#reset, .grid-item#equal, .grid-item#del) {
+  color: #242641;
+}
+
+body:not(.calculator-container) {
+  background-color: #42456b;
+}
+
+.grid-item#reset,
+.grid-item#equal {
+  grid-column: span 2; /* Occupies 2 columns */
+  grid-row: span 2; /* Occupies 2 rows */
+}
+
+.grid-item#reset,
+.grid-item#equal,
+.grid-item#del {
+  color: white;
+}
+
+.grid-item#reset,
+.grid-item#del {
+  background-color: #a2a7ee;
+}
+
+.grid-item#equal {
+  background-color: rgb(250, 62, 62);
+}
+
+/* .calculator-container {
+  box-sizing: border-box;
+  display: flexbox;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  border: #131638 2px solid;
+  border-radius: 25px;
+  padding: 2%;
+  margin: 5%;
+  width: 90%;
+} */
+
+@media (max-width: 1038px) {
+  input[type="radio"][name="theme1"] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5%;
+    cursor: pointer;
+    background-color: rgb(250, 62, 62);
+  }
+
+  .labels {
+    position: absolute;
+    display: flexbox;
+    text-align: center;
+    letter-spacing: 6px;
+    margin-top: -1.5%;
+    margin-left: 6%;
+    font-size: 11px;
+    scale: 0.9;
+  }
+  .grid-container {
+    gap: 5px;
+  }
+  h5 {
+    margin-right: 10%;
+  }
+  .calculator-container {
+    width: 100%;
+  }
+  .grid-item {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 904px) {
+  body {
+    background-color: white;
+  }
+  input[type="radio"][name="theme1"] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5%;
+    cursor: pointer;
+    background-color: rgb(250, 62, 62);
+  }
+  .logo-theme ul {
+    scale: 0.9;
+  }
+  .labels {
+    letter-spacing: 3px;
+    margin-top: -5.5%;
+    margin-left: 15%;
+    font-size: 12px;
+    scale: 0.8;
+  }
+  .grid-container {
+    gap: 6px;
+  }
+  h5 {
+    margin-right: 8%;
+  }
+
+  .theme-container {
+    border: rgb(6, 6, 78) 1px solid;
+    border-radius: 30px;
+    padding: 1%;
+    align-items: center;
+    background-color: #242641;
+    font-size: 8px;
+  }
+  .calculator-container {
+    width: 100%;
+  }
+
+  .calculator-screen {
+    font-size: 20px;
+  }
+
+  .grid-item {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 804px) {
+  .labels {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    letter-spacing: 1px;
+    margin-top: 0.5%;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+  .grid-container {
+    gap: 4px;
+  }
+  h5 {
+    margin-right: 8%;
+  }
+
+  .theme-container {
+    margin-right: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    font-size: 8px;
+    height: 50px;
+    width: 15px;
+  }
+  .calculator-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .calculator-screen {
+    font-size: 15px;
+  }
+
+  .grid-item {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-color: white;
+  }
+
+  .labels {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    letter-spacing: 1px;
+    margin-top: 0.5%;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+  .grid-container {
+    gap: 4px;
+    font-size: 10px;
+  }
+  h5 {
+    margin-right: 8%;
+  }
+
+  .theme-container {
+    margin-right: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    font-size: 8px;
+    height: 50px;
+    width: 15px;
+  }
+  .calculator-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .calculator-screen {
+    font-size: 10px;
+  }
+
+  .grid-item {
+    font-size: 8px;
+  }
+  .grid-item#reset,
+  .grid-item#equal,
+  .grid-item#del {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .labels {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    letter-spacing: 1px;
+    margin-top: 0.5%;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+  .grid-container {
+    gap: 4px;
+    font-size: 10px;
+  }
+  h5 {
+    margin-right: 8%;
+  }
+
+  .theme-container {
+    margin-right: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    font-size: 8px;
+    height: 50px;
+    width: 15px;
+  }
+  .calculator-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .calculator-screen {
+    font-size: 10px;
+  }
+
+  .grid-item {
+    padding: 1%;
+    font-size: 10px;
+  }
+}
